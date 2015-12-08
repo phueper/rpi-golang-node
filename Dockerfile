@@ -1,4 +1,6 @@
-FROM resin/rpi-raspbian:jessie
+# we use the rpi-golang as base image so we have node and go in the same image (needed to build grafana)
+FROM hypriot/rpi-golang
+#FROM resin/rpi-raspbian:jessie
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends build-essential git libssl-dev python ca-certificates curl && \
